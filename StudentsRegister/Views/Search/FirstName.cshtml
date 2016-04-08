@@ -1,0 +1,23 @@
+﻿@using StudentsRegister.Entities
+
+@model StudentsRegister.Entities.StudentListViewModel
+
+@{
+    ViewBag.Title = "ListStudents";
+}
+
+@foreach (var p in Model.Students)
+{
+    <div class="well">
+        <h4><strong>Имена на студента: @p.LastName, @p.FirstName</strong></h4>
+        <span class="pull-right">
+            Факултетен номер: @p.StudentID
+        </span>
+    </div>
+}
+
+<p>
+@using (Html.BeginForm("ListStudents", "Student"))
+{
+    <input class="btn btn-sm btn-warning" type="submit" value="Back to all students list" />
+}</p>

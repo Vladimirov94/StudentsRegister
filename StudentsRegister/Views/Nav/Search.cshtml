@@ -1,0 +1,27 @@
+﻿@model StudentsRegister.Entities.Student
+
+<p><h3>Search Student</h3></p>
+
+<p>By First Name: @using (Html.BeginForm("FirstName", "Search"))
+{
+    @Html.TextBoxFor(x => x.FirstName)
+    <input class="btn btn-sm btn-warning" type="submit" value="Search" />
+}</p>
+
+<p>By Last Name: @using (Html.BeginForm("LastName", "Search"))
+{
+    @Html.TextBoxFor(x => x.LastName)
+    <input class="btn btn-sm btn-warning" type="submit" value="Search" />
+}</p>
+
+<p>By ID: @using (Html.BeginForm("SearchID", "Search"))
+{
+    @Html.TextBoxFor(x => x.StudentID)
+    <input class="btn btn-sm btn-warning" type="submit" value="Search" />
+}</p>
+
+<p>By Course: @using (Html.BeginForm("Course", "Search"))
+{
+    @Html.TextBoxFor(x => x.Course)
+    <input class="btn btn-sm btn-warning" type="submit" value="Search" />
+}</p>

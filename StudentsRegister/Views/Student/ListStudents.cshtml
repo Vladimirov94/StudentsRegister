@@ -1,0 +1,23 @@
+﻿@using StudentsRegister.Entities
+@model IEnumerable<Student>
+
+@{
+    ViewBag.Title = "ListStudents";
+}
+
+@foreach (var p in Model)
+{
+    <div class="well">
+        <h4><strong>Имена на студента: @p.LastName, @p.FirstName</strong></h4>
+        <span class="pull-right">
+            Факултетен номер: @p.StudentID
+        </span> 
+    </div>
+
+    using (Html.BeginForm("ListCurrent", "CurrentStudent"))
+    {
+        @Html.Hidden("StudentID", p.StudentID)
+        <input type="submit" class="btn btn-default btn-xs" value="@p.FirstName Profile" />
+    }
+}
+
